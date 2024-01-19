@@ -67,6 +67,44 @@ models:
         tests:
           - not_null
 
+  - name : stg_payment
+    description: This model cleans up payment data
+    columns:
+      - name: payment_id
+        description: Primary Key
+        tests:
+          - not_null
+          - unique
+
+      - name: order_id
+        description: Id of order associated with the payment.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_orders')
+              field: order_id
+          
+      - name: payment_method
+        description: Payment method used.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['credit_card','coupon','bank_transfer','gift_card']
+
+      - name: payment_status
+        description: Status of payment.
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['success','fail']
+
+      - name: amount
+        description: Amount paid.
+        tests:
+          -  not_null
+          
+          
+
       
           
               
