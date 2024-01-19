@@ -23,6 +23,8 @@ models:
           - not_null
       - name: number_of_orders
         description: 0 when the customer has not placed any order.
+      - name: total_spent
+        description: Total an=mount spent by customer
 
   - name: stg_customers
     description: This model cleans up customer data
