@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name : int_payments_pivoted_to_orders
+    description: Map payments data to orders.
+    columns:
+    - name: order_id
+      description: Order id
+      tests:
+        - not_null
+        - relationships:
+            to: ref('stg_jaffle_shop__orders')
+            field: order_id
+    - name: total_amount
+      description: Total amount paid for order
+      tests:
+        - not_null
+        

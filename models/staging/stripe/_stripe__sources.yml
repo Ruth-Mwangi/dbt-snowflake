@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+    - name: stripe
+      description: This is the replica for payment data
+      database: raw
+      schema: stripe
+      tables:
+        - name: payment
+          description: One record per payment.
