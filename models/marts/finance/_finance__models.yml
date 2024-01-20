@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: orders
+    description: Order and payment details
+    columns:
+      - name: order_id
+        description: Order id.
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: Customer id.
+        tests:
+          - not_null
+      - name: order_date
+        description: Date order was placed
+        tests:
+          - not_null
+      - name: amount
+        description: Total amount spent
+      - name: gift_card_amount
+        description: Gift card amount.
+       
+            
+          
+      
+          
+      
+          
+      

@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: customers
+    description: One record per customer
+    columns:
+      - name: customer_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: first_order_date
+        description: NULL when a customer has not yet placed an order.
+      - name: most_recent_order_date
+        description: NULL when a customer has not yet placed an order.
+      - name: first_name
+        description: First name of the customer.
+        tests:
+          - not_null
+      - name: last_name
+        description: Last name of the customer.
+        tests:
+          - not_null
+      - name: number_of_orders
+        description: 0 when the customer has not placed any order.
+      - name: lifetime_value
+        description: Total amount spent by customer
