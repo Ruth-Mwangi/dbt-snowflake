@@ -23,7 +23,35 @@ models:
         description: Gift card amount.
        
             
-          
+# semantic_models:
+#   - model: ref('orders')
+#     name: orders
+#     description: Model containing order data.
+#     entities:
+#       - name: order_id
+#         type: primary
+#       - name: customer
+#         type: foreign
+#         expr: customer_id
+      
+#     dimensions:
+#       - name: ordered_at
+#         expr: date_trunc('day', ordered_at)
+#         type: time
+#         type_params:
+#           time_granularity: day
+
+#       - name: is_large_order
+#         type: categorical
+#         expr: case when order_total > 50 then true else false end
+
+#     measures:
+#       - name: amount
+#         description: Total amount of order.
+#         agg: sum
+#       - name: gift_card_amount
+#         description: Total amount of gift card
+#         agg: sum
       
           
       
