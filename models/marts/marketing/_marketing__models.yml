@@ -25,3 +25,4 @@ models:
         description: 0 when the customer has not placed any order.
       - name: lifetime_value
         description: Total amount spent by customer
+
